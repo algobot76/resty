@@ -295,6 +295,7 @@ func (c *Client) SetAuthToken(token string) *Client {
 }
 
 // R method creates a new request instance, its used for Get, Post, Put, Delete, Patch, Head, Options, etc.
+// (AB76) Each request has query params, form data, header, and cookies (which are set by the client).
 func (c *Client) R() *Request {
 	r := &Request{
 		QueryParam: url.Values{},
